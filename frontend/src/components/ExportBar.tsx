@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ProjectData } from '../hooks/useProject';
+import { resolveAssetUri } from '../utils/assets';
 import {
   Download,
   FileCode,
@@ -51,7 +52,7 @@ export const ExportBar: React.FC<ExportBarProps> = ({ project }) => {
     URL.revokeObjectURL(url);
   };
 
-  const pdfUri = result.pdfUri || '/mock_art/comic.pdf';
+  const pdfUri = resolveAssetUri(result.pdfUri) || '/mock_art/comic.pdf';
   const hasPages = project.pages && project.pages.length > 0;
   const isFinished = project.status === 'exporting' || project.status === 'done' || hasPages || project.panels.length > 0;
 
