@@ -83,9 +83,9 @@ export function App() {
     if (isGeneratingPipeline) return;
     setIsGeneratingPipeline(true);
     setSimulatedProject(null);
+    setActiveTab('studio');
     try {
       await triggerGeneration();
-      setActiveTab('studio');
     } catch (err) {
       console.error('[handleTriggerGenerate] error:', err);
     } finally {

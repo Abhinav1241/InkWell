@@ -26,7 +26,7 @@ PROJECT_ID: str = (
 )
 REGION: str = os.getenv("REGION", "us-central1")
 VERTEX_LOCATION: str = os.getenv("VERTEX_LOCATION", "global")
-ASSETS_BUCKET: str = os.getenv("ASSETS_BUCKET", "")
+ASSETS_BUCKET: str = os.getenv("ASSETS_BUCKET") or f"{PROJECT_ID}-inkwell-assets"
 JOBS_TOPIC: str = os.getenv("JOBS_TOPIC", "inkwell-jobs")
 
 # ── Models (Vertex AI) ───────────────────────────────────────────────────────
