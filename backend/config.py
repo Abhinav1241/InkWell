@@ -18,15 +18,21 @@ if _env_path.exists():
 
 # ── Google Cloud ──────────────────────────────────────────────────────────────
 
-PROJECT_ID: str = os.getenv("PROJECT_ID", "")
+PROJECT_ID: str = (
+    os.getenv("PROJECT_ID")
+    or os.getenv("GCP_PROJECT")
+    or os.getenv("GOOGLE_CLOUD_PROJECT")
+    or "gen-lang-client-0795624280"
+)
 REGION: str = os.getenv("REGION", "us-central1")
+VERTEX_LOCATION: str = os.getenv("VERTEX_LOCATION", "global")
 ASSETS_BUCKET: str = os.getenv("ASSETS_BUCKET", "")
 JOBS_TOPIC: str = os.getenv("JOBS_TOPIC", "inkwell-jobs")
 
 # ── Models (Vertex AI) ───────────────────────────────────────────────────────
 
 TEXT_MODEL: str = os.getenv("TEXT_MODEL", "gemini-3.5-flash")
-IMAGE_MODEL_DEV: str = os.getenv("IMAGE_MODEL_DEV", "gemini-3.1-flash-image")
+IMAGE_MODEL_DEV: str = os.getenv("IMAGE_MODEL_DEV", "gemini-2.5-flash-image")
 IMAGE_MODEL_FINAL: str = os.getenv("IMAGE_MODEL_FINAL", "gemini-3-pro-image")
 VEO_MODEL: str = os.getenv("VEO_MODEL", "veo-3.1-generate-001")
 GEMMA_MODEL: str = os.getenv("GEMMA_MODEL", "gemma-3-4b-it")

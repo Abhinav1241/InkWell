@@ -29,8 +29,8 @@ def _get_client() -> genai.Client:
     if _client is None:
         _client = genai.Client(
             vertexai=True,
-            project=config.PROJECT_ID,
-            location=config.REGION,
+            project=config.PROJECT_ID or None,
+            location=config.VERTEX_LOCATION,
         )
     return _client
 

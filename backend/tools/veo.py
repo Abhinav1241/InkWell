@@ -49,7 +49,7 @@ def animate_hero_panel(
         client = genai.Client(
             vertexai=True,
             project=config.PROJECT_ID or None,
-            location=config.REGION or None,
+            location=config.VERTEX_LOCATION or config.REGION or "global",
         )
 
         contents = [
