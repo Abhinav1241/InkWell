@@ -11,6 +11,7 @@ import { MotionTeaser } from './components/MotionTeaser';
 import { StyleGuide } from './components/StyleGuide';
 import { LiveSimulationController } from './components/LiveSimulationController';
 import { ShaderGradientBackground } from './components/ShaderGradientBackground';
+import { resolveAssetUri } from './utils/assets';
 import {
   Feather,
   LayoutGrid,
@@ -296,7 +297,7 @@ export function App() {
                 {project?.result?.motionUri && (
                   <div className="mt-4">
                     <MotionTeaser
-                      motionUri={project.result.motionUri}
+                      motionUri={resolveAssetUri(project.result.motionUri)}
                       title={project?.title || 'Inkwell Comic'}
                     />
                   </div>

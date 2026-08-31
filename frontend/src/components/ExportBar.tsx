@@ -218,7 +218,7 @@ export const ExportBar: React.FC<ExportBarProps> = ({ project }) => {
           <div className="pt-3 border-t border-border-charcoal">
             {result.motionUri ? (
               <a
-                href={result.motionUri}
+                href={resolveAssetUri(result.motionUri)}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="teaser.mp4"
