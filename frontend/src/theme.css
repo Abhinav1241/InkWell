@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ground-900: #1A1815;
+    --surface-card: #2A2722;
+    --border-crisp: #332F28;
+    --paper-page: #F6F3EB;
+    --vermilion: #EA5A2C;
+  }
+
+  body {
+    background-color: #1A1815;
+    color: #FAF7F0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Newsreader', Georgia, serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .font-comic {
+    font-family: 'Bangers', cursive, sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* ── Editorial Motion Tokens ─────────────────────────────────────────────── */
+.motion-fast {
+  transition: all 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.motion-panel {
+  transition: all 400ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.motion-crossfade {
+  transition: all 600ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes blurResolve {
+  0% {
+    filter: blur(14px);
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-blur-resolve {
+  animation: blurResolve 400ms cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes crossfadeRedraw {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-crossfade-redraw {
+  animation: crossfadeRedraw 600ms cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes memoryPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(234, 90, 44, 0);
+    border-color: #332F28;
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(234, 90, 44, 0.45);
+    border-color: #EA5A2C;
+  }
+}
+
+.memory-pulse-active {
+  animation: memoryPulse 1.2s cubic-bezier(0.2, 0, 0, 1) infinite;
+}
+
+/* ── Paper Grain Texture (microscopic organic noise) ─────────────────────── */
+.paper-grain {
+  background-color: #F6F3EB;
+  background-image: radial-gradient(#1a1815 0.5px, transparent 0.5px);
+  background-size: 8px 8px;
+  background-position: 0 0;
+}
+
+.paper-grain-subtle {
+  background-color: #F6F3EB;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── Comic Page on Desk (Visual Signature) ───────────────────────────────── */
+.page-on-desk {
+  background-color: #F6F3EB;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #D5CEBE;
+}
+
+/* ── Critic Failure State ────────────────────────────────────────────────── */
+.critic-failed {
+  opacity: 0.6;
+  border: 2px dashed #EA5A2C !important;
+  transition: all 400ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.verdict-pin {
+  background-color: #1A1815;
+  border: 1px solid #EA5A2C;
+  color: #FAF7F0;
+  box-shadow: 0 4px 12px rgba(234, 90, 44, 0.25);
+}
+
+/* ── Custom Editorial Scrollbars ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1815;
+}
+::-webkit-scrollbar-thumb {
+  background: #332F28;
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #484239;
+}
+
+/* ── Headline Ink-Draw Entrance Animation ────────────────────────────────── */
+@keyframes inkGlyphDraw {
+  0% {
+    stroke-dashoffset: 350;
+    fill-opacity: 0;
+  }
+  65% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0.25;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+.animate-ink-glyph {
+  stroke: #FAF7F0;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: #FAF7F0;
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  fill-opacity: 0;
+  animation: inkGlyphDraw 750ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Accessibility & Reduced Motion ──────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #EA5A2C;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

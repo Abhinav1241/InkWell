@@ -1,0 +1,15 @@
+node_modules
+frontend/node_modules
+**/__pycache__
+*.pyc
+.venv
+.env
+.env.*
+.git
+.gitignore
+docs/*.png
+*.md
+!README.md
+milestone_output
+milestone_day2_verified
+tests

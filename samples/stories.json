@@ -1,0 +1,28 @@
+{
+  "stories": [
+    {
+      "id": "lighthouse",
+      "title": "The Last Lighthouse Keeper",
+      "text": "An old lighthouse keeper named Elara discovers that the light she's been tending for forty years doesn't just guide ships — it keeps something ancient and dark sealed beneath the waves. When a storm knocks out the light, she has one night to repair it before the creature rises. Her only help is a skeptical young coast guard officer named Kai who thinks she's lost her mind — until he sees the shadows moving in the water.",
+      "characters": 2,
+      "pages": 4,
+      "notes": "Good for testing: 2 characters with distinct designs (old woman, young man), dramatic lighting, creature reveal"
+    },
+    {
+      "id": "robot_garden",
+      "title": "The Garden in the Machine",
+      "text": "In a city where all nature was replaced by technology decades ago, a small maintenance robot named Sprocket finds a single seed growing in a crack in the server room floor. Not understanding what it is, Sprocket begins caring for it in secret, stealing water from coolant pipes and redirecting a sunlamp. When the plant blooms into a brilliant red flower, the city's AI overseer detects the 'anomaly' and sends cleanup drones. Sprocket must choose between its programming and the first beautiful thing it has ever known.",
+      "characters": 2,
+      "pages": 6,
+      "notes": "Good for testing: a robot character (consistent mechanical design), an AI overseer (abstract/menacing), nature vs tech contrast, emotional range"
+    },
+    {
+      "id": "bakery",
+      "title": "The Midnight Bakery",
+      "text": "Maya runs a tiny bakery that only opens from midnight to dawn, serving the city's night workers — taxi drivers, nurses, security guards. One night, a mysterious well-dressed woman named Vivienne walks in and offers to buy the whole shop for an absurd amount of money. Maya refuses. Vivienne keeps coming back, each night revealing a little more about why she really wants this specific building. It turns out the bakery sits on top of something Vivienne's family buried a hundred years ago. Maya has to decide whether to help Vivienne or protect her home.",
+      "characters": 2,
+      "pages": 4,
+      "notes": "Best demo story: warm setting, two visually distinct women, dialogue-heavy (tests lettering), intimate scenes (tests close-ups)"
+    }
+  ]
+}

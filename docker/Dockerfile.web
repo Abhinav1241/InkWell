@@ -1,0 +1,28 @@
+# Inkwell — Web + API Service Dockerfile
+# Single Cloud Run service: serves API + static frontend
+
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# System deps for Pillow
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
+    fonts-dejavu-core \
+    && rm -rf /var/lib/apt/lists/*
+
+# Python deps
+COPY backend/requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy backend
+COPY backend/ ./backend/
+
+# Copy built frontend (if exists)
+COPY frontend/dist/ ./frontend/dist/ 2>/dev/null || true
+
+# Expose port
+EXPOSE 8080
+
+# Run
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8080"]
