@@ -246,15 +246,17 @@ export const LiveSimulationController: React.FC<LiveSimulationControllerProps> =
         onClick={runLiveStreamingSimulation}
         disabled={isRunningSim}
         className="px-3 py-1.5 bg-vermilion-500 hover:bg-vermilion-600 disabled:opacity-50 text-white font-sans text-xs font-semibold flex items-center gap-1.5 motion-fast shadow-vermilion-glow"
+        title="Simulates live stream & critic redraw using demo assets"
       >
         <Play className="w-3.5 h-3.5" />
-        <span>{isRunningSim ? 'Running Verification...' : 'Run Chunks 3–5 Full Interaction'}</span>
+        <span>{isRunningSim ? 'Running Simulation...' : 'Preview Demo UI (Simulation)'}</span>
       </button>
 
       <button
         onClick={onReset}
         disabled={isRunningSim}
         className="px-2.5 py-1.5 bg-surface-card hover:bg-surface-hover border border-border-charcoal text-paper-cream text-xs flex items-center gap-1 motion-fast"
+        title="Restore active story state"
       >
         <RotateCcw className="w-3.5 h-3.5" />
         <span className="hidden sm:inline">Reset</span>

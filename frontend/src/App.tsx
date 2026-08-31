@@ -67,6 +67,7 @@ export function App() {
   // Start new project from story premise
   const handleStartStory = async (storyText: string) => {
     setIsStartingStory(true);
+    setSimulatedProject(null);
     try {
       const newId = await createProject(storyText);
       if (newId) {
@@ -81,6 +82,7 @@ export function App() {
   const handleTriggerGenerate = async () => {
     if (isGeneratingPipeline) return;
     setIsGeneratingPipeline(true);
+    setSimulatedProject(null);
     try {
       await triggerGeneration();
       setActiveTab('studio');
@@ -93,6 +95,7 @@ export function App() {
 
   const handleCreateNewProject = () => {
     setProjectId(null);
+    setSimulatedProject(null);
     setActiveTab('intake');
   };
 

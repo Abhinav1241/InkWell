@@ -395,25 +395,24 @@ async def get_upload_url(request: Request):
     return {"uploadUrl": url}
 
 
-# ── Local Dev Worker Trigger ────────────────────────────────────────────────
+# ── Worker Pipeline Trigger ──────────────────────────────────────────────────
 
-if config.LOCAL_DEV:
-    @app.post("/worker/trigger/{project_id}")
-    async def trigger_worker(project_id: str):
-        """DEV ONLY: Trigger the worker pipeline asynchronously in the background (no Pub/Sub needed)."""
-        import asyncio
-        from backend.worker import run_pipeline
+@app.post("/worker/trigger/{project_id}")
+async def trigger_worker(project_id: str):
+    """Trigger the worker pipeline asynchronously in the background."""
+    import asyncio
+    from backend.worker import run_pipeline
 
-        db = _get_db()
-        proj = db.collection("projects").document(project_id).get()
-        if not proj.exists:
-            raise HTTPException(404, "Project not found")
+    db = _get_db()
+    proj = db.collection("projects").document(project_id).get()
+    if not proj.exists:
+        raise HTTPException(404, "Project not found")
 
-        # Launch background task
-        asyncio.create_task(run_pipeline(project_id))
-        log.info("Launched background comic studio pipeline for project %s", project_id)
+    # Launch background task
+    asyncio.create_task(run_pipeline(project_id))
+    log.info("Launched background comic studio pipeline for project %s", project_id)
 
-        return {"status": "queued", "projectId": project_id}
+    return {"status": "queued", "projectId": project_id}
 
 
 # ── Pub/Sub Push Handler ────────────────────────────────────────────────────
