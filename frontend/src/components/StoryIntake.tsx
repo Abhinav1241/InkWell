@@ -388,7 +388,7 @@ export const StoryIntake: React.FC<StoryIntakeProps> = ({
             </div>
             <div>
               <h2 className="text-sm font-display font-medium text-paper-cream">Creative Director Agent</h2>
-              <p className="text-[10px] font-mono text-paper-muted">Gemini 2.5 Flash • Story Bible Extraction</p>
+              <p className="text-[10px] font-mono text-paper-muted">Gemini 3.5 Flash • Story Bible Extraction</p>
             </div>
           </div>
 

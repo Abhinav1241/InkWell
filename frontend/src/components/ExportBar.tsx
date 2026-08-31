@@ -306,7 +306,7 @@ export const ExportBar: React.FC<ExportBarProps> = ({ project }) => {
             <tbody className="divide-y divide-border-charcoal bg-ground-950/60 text-[11px] text-paper-cream">
               <tr>
                 <td className="p-2.5">Creative Director</td>
-                <td className="p-2.5 text-vermilion-500">Gemini 2.5 Flash</td>
+                <td className="p-2.5 text-vermilion-500">Gemini 3.5 Flash</td>
                 <td className="p-2.5 font-sans">Story extraction & script blueprinting</td>
                 <td className="p-2.5 text-emerald-400">Enabled</td>
               </tr>
@@ -318,7 +318,7 @@ export const ExportBar: React.FC<ExportBarProps> = ({ project }) => {
               </tr>
               <tr>
                 <td className="p-2.5">Consistency Critic</td>
-                <td className="p-2.5 text-vermilion-500">Gemini 2.5 Flash Vision</td>
+                <td className="p-2.5 text-vermilion-500">Gemini 3.5 Flash Vision</td>
                 <td className="p-2.5 font-sans">Visual QA & auto-correction prompt delta</td>
                 <td className="p-2.5 text-emerald-400">Max 2 passes</td>
               </tr>

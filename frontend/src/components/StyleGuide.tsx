@@ -226,7 +226,7 @@ export function StyleGuide() {
               <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 pb-1">
                 <span className="text-xs font-mono text-paper-muted w-32">Code & Metadata</span>
                 <span className="text-xs font-mono text-vermilion-500 flex-1">
-                  POST /projects/proj_8829/turn --model gemini-2.5-pro --cost-guard ACTIVE
+                  POST /projects/proj_8829/turn --model gemini-3.5-flash --cost-guard ACTIVE
                 </span>
                 <span className="text-xs font-mono text-paper-muted">12px / Monospace</span>
               </div>
