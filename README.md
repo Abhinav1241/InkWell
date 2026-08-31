@@ -20,7 +20,7 @@
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20Vite%20%7C%20Tailwind-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
 [![Observability](https://img.shields.io/badge/Observability-OpenTelemetry%20%7C%20Cloud%20Trace-FF6F00)](https://cloud.google.com/trace)
 
-[🚀 Live Demo](https://inkwell-619812776413.us-central1.run.app) • [📐 Architecture](ARCHITECTURE.md) • [📖 Features](#key-features) • [⚡ Quickstart](#getting-started) • [🛡️ CostGuard](#cost-architecture--guardrails)
+[🚀 Live Demo](https://inkwell-ar6u4opixa-uc.a.run.app) • [📐 Architecture](ARCHITECTURE.md) • [📖 Features](#key-features) • [⚡ Quickstart](#getting-started) • [🛡️ CostGuard](#cost-architecture--guardrails)
 
 </div>
 
