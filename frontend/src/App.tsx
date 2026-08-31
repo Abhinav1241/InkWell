@@ -263,15 +263,17 @@ export function App() {
                       progress={project?.progress || 0}
                       status={project?.status || 'idle'}
                       activeReferencedCharacter={
-                        project?.status === 'drawing' ? 'Elara Thorne' : null
+                        project?.characters?.[0]?.name || null
                       }
                       onApprovePanel={(id, decision, note) => approveItem('panel', id, decision, note)}
                       simulationControls={
-                        <LiveSimulationController
-                          onInjectMockProject={(p) => setSimulatedProject(p)}
-                          onInjectStepUpdate={(updater) => setSimulatedProject((prev: any) => updater(prev || project))}
-                          onReset={() => setSimulatedProject(null)}
-                        />
+                        typeof window !== 'undefined' && window.location.search.includes('demo=true') ? (
+                          <LiveSimulationController
+                            onInjectMockProject={(p) => setSimulatedProject(p)}
+                            onInjectStepUpdate={(updater) => setSimulatedProject((prev: any) => updater(prev || project))}
+                            onReset={() => setSimulatedProject(null)}
+                          />
+                        ) : undefined
                       }
                     />
                   </div>

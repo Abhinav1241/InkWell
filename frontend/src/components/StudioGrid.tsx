@@ -98,7 +98,7 @@ export const StudioGrid: React.FC<StudioGridProps> = ({
     order: i,
     shotType: i === 0 ? 'ESTABLISHING WIDE' : i === 1 ? 'MEDIUM TWO-SHOT' : 'CLOSE-UP',
     staging: 'Center',
-    charactersPresent: i === 0 ? ['Elara Thorne'] : [],
+    charactersPresent: characters.length > 0 ? [characters[0].name] : [],
     action: 'Awaiting autonomous story breakdown...',
     caption: '',
     dialogue: [],
