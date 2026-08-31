@@ -53,16 +53,7 @@ export function App() {
     }
   }, [projectId]);
 
-  // Auto-switch to studio grid when drawing starts
-  useEffect(() => {
-    if (project?.status && ['drawing', 'lettering', 'laying_out', 'exporting'].includes(project.status)) {
-      if (activeTab === 'intake') {
-        setActiveTab('studio');
-      }
-    } else if (project?.status === 'done' && activeTab === 'studio') {
-      setActiveTab('reader');
-    }
-  }, [project?.status]);
+
 
   // Start new project from story premise
   const handleStartStory = async (storyText: string) => {

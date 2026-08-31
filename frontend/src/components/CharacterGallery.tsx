@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Character } from '../hooks/useProject';
+import { resolveAssetUri } from '../utils/assets';
 import { Check, X, Sparkles, User, RefreshCw, Layers, ShieldCheck } from 'lucide-react';
 
 interface CharacterGalleryProps {
@@ -85,7 +86,7 @@ export const CharacterGallery: React.FC<CharacterGalleryProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {displayCharacters.map((char) => {
           const hasSheet = char.referenceSheetUris && char.referenceSheetUris.length > 0;
-          const sheetSrc = hasSheet ? char.referenceSheetUris[0] : undefined;
+          const sheetSrc = hasSheet ? resolveAssetUri(char.referenceSheetUris[0]) : undefined;
 
           return (
             <div

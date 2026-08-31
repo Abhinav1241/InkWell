@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Page, Panel } from '../hooks/useProject';
+import { resolveAssetUri } from '../utils/assets';
 import {
   ChevronLeft,
   ChevronRight,
@@ -457,7 +458,7 @@ export const ComicReader: React.FC<ComicReaderProps> = ({ pages, panels, title }
               {availablePages.map((p, idx) => (
                 <div key={p.id || idx} className="w-full p-0 m-0 leading-none">
                   <img
-                    src={p.pageImageUri}
+                    src={resolveAssetUri(p.pageImageUri)}
                     alt={`Comic Page ${idx + 1}`}
                     className="w-full h-auto object-contain block select-none"
                   />
@@ -486,7 +487,7 @@ export const ComicReader: React.FC<ComicReaderProps> = ({ pages, panels, title }
               style={getPageContainerStyle()}
             >
               <img
-                src={activePage.pageImageUri}
+                src={resolveAssetUri(activePage.pageImageUri)}
                 alt={`Comic Page ${currentPage + 1}`}
                 style={getImageStyle()}
                 className="select-none block shadow-sm"
@@ -571,7 +572,7 @@ export const ComicReader: React.FC<ComicReaderProps> = ({ pages, panels, title }
               >
                 {p.pageImageUri ? (
                   <img
-                    src={p.pageImageUri}
+                    src={resolveAssetUri(p.pageImageUri)}
                     alt={`Page ${idx + 1} thumbnail`}
                     className="w-full h-full object-cover"
                   />

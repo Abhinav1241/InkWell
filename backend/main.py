@@ -384,6 +384,24 @@ async def get_project(project_id: str):
     return data
 
 
+@app.get("/media/{path:path}")
+async def serve_media(path: str):
+    """Serve media files from GCS bucket with browser caching."""
+    from backend.tools import storage
+    from fastapi.responses import Response
+    try:
+        data = storage.download_bytes(path)
+        content_type = storage._content_type(path)
+        return Response(
+            content=data,
+            media_type=content_type,
+            headers={"Cache-Control": "public, max-age=86400"},
+        )
+    except Exception as e:
+        log.warning("Media download error for %s: %s", path, e)
+        raise HTTPException(404, "Media not found")
+
+
 @app.post("/assets/upload-url")
 async def get_upload_url(request: Request):
     """Generate a signed upload URL for direct GCS upload."""

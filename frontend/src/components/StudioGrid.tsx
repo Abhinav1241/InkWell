@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Panel, Page, Character } from '../hooks/useProject';
+import { resolveAssetUri } from '../utils/assets';
 import {
   CheckCircle2,
   RefreshCw,
@@ -194,10 +195,11 @@ export const StudioGrid: React.FC<StudioGridProps> = ({
               const currentInspect = inspectMode[panel.id] || (isFailed ? 'before' : 'after');
 
               // Determine image src based on inspect toggle
-              let activeImageSrc = panel.letteredUri || panel.artUri;
+              let rawImageSrc = panel.letteredUri || panel.artUri;
               if (currentInspect === 'before' && panel.draftUri) {
-                activeImageSrc = panel.draftUri;
+                rawImageSrc = panel.draftUri;
               }
+              const activeImageSrc = resolveAssetUri(rawImageSrc);
 
               return (
                 <div
@@ -364,7 +366,7 @@ export const StudioGrid: React.FC<StudioGridProps> = ({
                     {char.referenceSheetUris && char.referenceSheetUris.length > 0 ? (
                       <div className="aspect-[4/3] bg-ground-900 border border-border-charcoal mb-2 overflow-hidden">
                         <img
-                          src={char.referenceSheetUris[0]}
+                          src={resolveAssetUri(char.referenceSheetUris[0])}
                           alt={char.name}
                           className="w-full h-full object-cover"
                         />
