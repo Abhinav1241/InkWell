@@ -61,7 +61,7 @@ Unlike standard image generators that produce disconnected, out-of-context artwo
 3. **Draws with Consistency:** Passes approved canonical character reference sheets into every panel generation request.
 4. **Self-Corrects:** Employs a dedicated **Consistency Critic Vision Agent** that inspects generated art against reference turnarounds and automatically triggers targeted re-draws when identity or staging drifts.
 5. **Letters & Lays Out:** Algorithmically typesets dialogue, sound effects, and captions onto dynamic panel templates using zero-cost PIL geometric rendering.
-6. **Delivers & Enhances:** Packages full books for web reading (LTR, RTL, Webtoon vertical scroll) and high-resolution PDF export, with optional **Veo 3.1** motion trailers, **Lyria** atmospheric soundtracks, and **Chirp 3 HD** voice narration.
+6. **Delivers & Enhances:** Packages full books for web reading (LTR, RTL, Webtoon vertical scroll) and high-resolution PDF export, with optional **Veo 3.1** motion trailers (FINAL mode only), **Chirp 3 HD** voice narration, and **Lyria** atmospheric scoring on the roadmap.
 
 ---
 
@@ -106,7 +106,7 @@ flowchart TD
         
         LettererAgent["Letterer & Layout Engine\n(PIL Geometry / Vector Bubbles)"]
         ExporterAgent["Exporter Agent\n(PDF Compilation & Reader)"]
-        MotionAgent["Multimodal Studio\n(Veo 3.1 / Lyria / Chirp HD)"]
+        MotionAgent["Multimodal Studio\n(Veo 3.1 · Chirp HD · Lyria planned)"]
     end
 
     subgraph Storage["Google Cloud Data & State Layer"]
