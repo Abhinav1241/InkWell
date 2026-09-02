@@ -12,6 +12,8 @@
 
 **An autonomous multi-agent comic studio that transforms raw narrative prompts into publication-ready, visually consistent comic books — featuring closed-loop vision critique and deterministic cost guardrails.**
 
+**🌐 Live Demo:** [https://inkwell-ar6u4opixa-uc.a.run.app/](https://inkwell-ar6u4opixa-uc.a.run.app/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Cloud%20Run%20%7C%20Firestore%20%7C%20GCS-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com/)
 [![Vertex AI](https://img.shields.io/badge/Vertex%20AI-Gemini%203.5%20Flash%20%7C%20Gemini%203%20Pro%20Image%20%7C%20Gemini%202.5%20Flash%20Image-EA4335?logo=google&logoColor=white)](https://cloud.google.com/vertex-ai)
@@ -20,7 +22,7 @@
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20Vite%20%7C%20Tailwind-61DAFB?logo=react&logoColor=black)](https://reactjs.org/)
 [![Observability](https://img.shields.io/badge/Observability-OpenTelemetry%20%7C%20Cloud%20Trace-FF6F00)](https://cloud.google.com/trace)
 
-[🚀 Live Demo](https://inkwell-ar6u4opixa-uc.a.run.app) • [📑 Table of Contents](#table-of-contents) • [📐 Architecture](#system-architecture) • [✨ Key Features](#key-features) • [🔌 API Reference](#api-reference) • [⚙️ Env Vars](#environment-variables-reference) • [🛡️ Cost Architecture](#cost-architecture--guardrails) • [⚡ Getting Started](#getting-started) • [🔧 Troubleshooting](#troubleshooting)
+[🚀 Live Demo](https://inkwell-ar6u4opixa-uc.a.run.app/) • [📑 Table of Contents](#table-of-contents) • [📐 Architecture](#system-architecture) • [✨ Key Features](#key-features) • [🔌 API Reference](#api-reference) • [⚙️ Env Vars](#environment-variables-reference) • [🛡️ Cost Architecture](#cost-architecture--guardrails) • [⚡ Getting Started](#getting-started) • [🔧 Troubleshooting](#troubleshooting)
 
 </div>
 
@@ -433,6 +435,8 @@ Open `http://localhost:5173` in your browser to start creating comics.
 ## 🚢 Cloud Deployment (Google Cloud Run)
 
 Inkwell packages both the FastAPI backend and pre-built React frontend into a high-performance, single-container Cloud Run deployment.
+
+**Live Deployment URL:** [https://inkwell-ar6u4opixa-uc.a.run.app/](https://inkwell-ar6u4opixa-uc.a.run.app/)
 
 ### 1. One-Command Deployment
 
